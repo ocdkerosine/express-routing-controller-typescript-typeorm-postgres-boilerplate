@@ -1,0 +1,35 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "Dev express-routing-controller-typescript-typeorm-postgres-boilerplate",
+            "command": "npm run dev"
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "Start express-routing-controller-typescript-typeorm-postgres-boilerplate",
+            "command": "npm run start"
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "Test express-routing-controller-typescript-typeorm-postgres-boilerplate",
+            "command": "npm run test"
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "Lint express-routing-controller-typescript-typeorm-postgres-boilerplate",
+            "command": "npm run lint"
+        },
+        {
+            "type": "node-terminal",
+            "request": "launch",
+            "name": "Lint:Fix express-routing-controller-typescript-typeorm-postgres-boilerplate",
+            "command": "npm run lint:fix"
+        }
+    ]
+}

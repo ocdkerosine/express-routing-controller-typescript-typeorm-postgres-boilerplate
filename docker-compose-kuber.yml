@@ -1,0 +1,59 @@
+version: '3.3' # 3.7 reduced due to kubernetes kompose compatibility
+
+services:
+  proxy:
+    image: nginx:alpine
+    container_name: http-proxy
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    restart: 'always' #unless-stopped removed for kompose compatibility
+    networks:
+      - backend
+  # broker:
+  #   image: oresoftware/live-mutex-broker:0.2.24
+  #   container_name: lock-broker
+  #   ports:
+  #     - '6970:6970'
+  #   environment:
+  #     - live_mutex_port=6970
+  #     - live_mutex_port=0.0.0.0
+  #   restart: 'always' #unless-stopped removed for kompose compatibility
+  #   networks:
+  #     - backend
+  server:
+    build:
+      context: ./
+#      target: production-build-stage
+      dockerfile: Dockerfile
+    image: -api:latest
+    container_name: -api
+    ports:
+      - '${APP_PORT}:${APP_PORT}'
+    environment:
+      - PM2_PUBLIC_KEY=6yrum59cxxwpy4s
+      - PM2_SECRET_KEY=bhbephh3fcq2zub
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    restart: 'always' #unless-stopped removed for kompose compatibility
+    networks:
+      - backend
+
+networks:
+  backend:
+#    name: -network
+    driver: bridge
+
+volumes:
+  data:
+#    name: -data
+    driver: local
+
+#docker-compose config > docker-compose-resolved.yaml
+#kompose convert -f docker-compose-resolved.yaml --volumes hostPath -o kubernetes --build local
+#docker-compose -p -api up --build
+#kubectl get deploy
+#kubectl delete deploy <deployment name>
+#kubectl proxy
