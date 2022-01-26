@@ -5,7 +5,7 @@ run:
   web: npm run deploy:prod
   worker:
     command:
-      - node dist/broker.js
+      - node broker.js
     image: web
 
 #heroku stack:set container
