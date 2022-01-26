@@ -3,3 +3,6 @@ build:
     web: Dockerfile
 
 #heroku stack:set container
+#heroku config:set APP_NAME=‘API’ APP_SCHEME=http APP_HOST=localhost APP_PORT=3000 APP_ROUTE_PREFIX=/v2 APP_BANNER=true TYPEORM_CONNECTION_TYPE=postgres TYPEORM_LOGGING=error TYPEORM_LOGGER=advanced-console TYPEORM_PORT=5434 TYPEORM_HOST=isilo.db.elephantsql.com TYPEORM_USERNAME=vzegamko TYPEORM_PASSWORD=f6DTReLHeIOiONDLRu1aMFT9KCW7O7ms TYPEORM_DATABASE=vzegamko TYPEORM_RECONNECT_SECONDS=10 TYPEORM_MAX_TRY_RECONNECT=5 TYPEORM_MIGRATIONS=src/database/migrations/**/*.ts TYPEORM_MIGRATIONS_DIR=src/database/migrations TYPEORM_ENTITIES=src/api/entities/**/*.ts TYPEORM_ENTITIES_DIR=src/api/entities TYPEORM_SEEDING_FACTORIES=src/database/factories/**/*.ts TYPEORM_SEEDING_SEEDS=src/database/seeds/**/*.ts MAIL_SANDBOX_MODE=true VERIFY_EMAIL_BASE_URL=http://localhost/auth/verifications/email RESET_PASSWORD_BASE_URL=http://localhost/auth/passwords/reset RABBIT_MQ_URL=amqps://pgosoeoe:RMN1PbfYn46gYEYSJFL5oyySZQ4XlWLU@beaver.rmq.cloudamqp.com/pgosoeoe RABBIT_MQ_QUEUE_PREFIX=template JWT_SECRET=68f7ece4b331b9d2f6 JWT_DAYS_VALIDITY=30 LOG_LEVEL=debug LOG_OUTPUT=dev MONITOR_ENABLED=true MONITOR_ROUTE=/monitor MONITOR_USERNAME=admin MONITOR_PASSWORD=1234 PM2_PUBLIC_KEY= PM2_SECRET_KEY=
+#MAIL_FROM_NAME='Salami from Malawi'
+#MAIL_FROM_ADDRESS=dev@sandboxccdb89fbbf06489bb7746957342544d5.mailgun.org
