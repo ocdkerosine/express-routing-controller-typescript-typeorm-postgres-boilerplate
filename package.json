@@ -1,7 +1,7 @@
 {
   "name": "express-routing-controller-typescript-typeorm-postgres-boilerplate",
   "version": "0.0.0",
-  "description": "TypeScript + Express + Routing Controllers + PostgreSQL + TypeORM Boilerplate API Server",
+  "description": "Production Ready TypeScript + Express + Routing Controllers + PostgreSQL + TypeORM Boilerplate API Server",
   "author": "",
   "license": "ISC",
   "scripts": {
@@ -12,7 +12,7 @@
     "test": "jest --forceExit --detectOpenHandles",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
     "lint:fix": "npm run lint -- --fix",
-    "deploy:prod": "npm run build && pm2-runtime start ecosystem.config.js --only 'prod,broker'",
+    "deploy:prod": "npm run build && pm2-runtime start ecosystem.config.js --only prod",
     "deploy:dev": "pm2-runtime start ecosystem.config.js --only dev",
     "typeorm": "set TS_NODE_FILES=true && node --require ts-node/register ./node_modules/typeorm/cli.js -f src/configs/ormconfig.ts",
     "typeorm:seed": "set TS_NODE_FILES=true && node --require ts-node/register ./node_modules/typeorm-seeding/dist/cli.js -n src/configs/ormconfig.ts",
