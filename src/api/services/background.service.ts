@@ -15,7 +15,7 @@ export class BackgroundService {
 
     this.logger.info(`Scheduling background jobs`);
 
-    NodeSchedule.scheduleJob(env.cron.withdrawalProcess, async () => {
+    NodeSchedule.scheduleJob(env.cron.delay, async () => {
       // await something
     });
   }

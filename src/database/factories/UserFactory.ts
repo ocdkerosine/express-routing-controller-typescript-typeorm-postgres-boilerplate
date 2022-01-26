@@ -1,4 +1,4 @@
-import * as Faker from 'faker';
+import Faker from '@faker-js/faker';
 import { define } from 'typeorm-seeding';
 import { v4 as uuidv4 } from 'uuid';
 import { User } from '../../api/entities/user.entity';
