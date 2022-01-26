@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 const lm = require('live-mutex');
-const Logger = require('../utils/logger');
+const Logger = require('src/utils/logger');
 
 const logger = new Logger.LoggerService(__filename);
 
