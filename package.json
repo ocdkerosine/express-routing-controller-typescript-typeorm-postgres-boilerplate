@@ -1,5 +1,5 @@
 {
-  "name": "express-routing-controller-typescript-typeorm-postgres-boilerplate",
+  "name": "kerosine-nodejs-boilerplate-api",
   "version": "0.0.0",
   "description": "Production Ready TypeScript + Express + Routing Controllers + PostgreSQL + TypeORM Boilerplate API Server",
   "author": "",
@@ -45,7 +45,6 @@
     "helmet": "^4.6.0",
     "hpp": "^0.2.3",
     "jsonwebtoken": "^8.5.1",
-    "live-mutex": "^0.2.25",
     "morgan": "^1.10.0",
     "node-schedule": "^2.1.0",
     "otp-generator": "^4.0.0",
@@ -55,6 +54,7 @@
     "routing-controllers": "^0.9.0",
     "routing-controllers-openapi": "^3.0.0",
     "socket.io": "^3.1.2",
+    "supertest": "^6.2.2",
     "swagger-ui-express": "^4.1.6",
     "typedi": "^0.10.0",
     "typeorm": "^0.2.41",

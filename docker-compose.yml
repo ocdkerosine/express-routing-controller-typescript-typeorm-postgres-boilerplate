@@ -1,16 +1,16 @@
 version: '3.7'
 
 services:
-  proxy:
-    image: nginx:alpine
-    container_name: template-api-proxy
-    ports:
-      - '80:80'
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-    restart: 'unless-stopped'
-    networks:
-      - api-network
+  # proxy:
+  #   image: nginx:alpine
+  #   container_name: template-api-proxy
+  #   ports:
+  #     - '80:80'
+  #   volumes:
+  #     - ./nginx.conf:/etc/nginx/nginx.conf
+  #   restart: 'unless-stopped'
+  #   networks:
+  #     - api-network
   broker:
     image: oresoftware/live-mutex-broker:0.2.24
     container_name: template-api-lock-broker
@@ -18,7 +18,7 @@ services:
       - '6970:6970'
     environment:
       - live_mutex_port=6970
-      - live_mutex_port=localhost
+      - live_mutex_host=0.0.0.0
     restart: 'unless-stopped'
     networks:
       - api-network
@@ -50,3 +50,10 @@ volumes:
   api-data:
     name: template-data
     driver: local
+
+#docker-compose config > docker-compose-resolved.yaml
+#kompose convert -f docker-compose-resolved.yaml --volumes hostPath -o kubernetes --build local
+#docker-compose -p paylot-api up --build
+#kubectl get deploy
+#kubectl delete deploy <deployment name>
+#kubectl proxy

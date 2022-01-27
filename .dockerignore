@@ -1,7 +1,8 @@
 # compiled output
 .vscode
 /node_modules
-
+*.exe
+logs
 # code formatter
 .eslintrc
 .eslintignore

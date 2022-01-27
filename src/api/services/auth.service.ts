@@ -3,14 +3,15 @@ import { UnauthorizedError } from '@errors/UnauthorizedError';
 import { IToken, LoginData, IVerifyEmail, IResetPassword } from '@interfaces/auth.interface';
 import { Service } from 'typedi';
 import { Logger, LoggerService } from '@utils/logger';
-import { USER_RESPONSES, OTP_RESPONSES, LOCK_KEYS } from '@constants/.';
+import { USER_RESPONSES, OTP_RESPONSES } from '@constants/.';
+// import { LOCK_KEYS } from '@constants/lock.constant';
 import { User } from '@entities/user.entity';
 import { JWTService } from '@services/jwt.service';
 import { UserService } from '@services/user.service';
 import { BadRequestError } from '@errors/BadRequestError';
 import { OTPService } from './otp.service';
 // import { MailService } from './mail.service';
-import { LockService } from './lock.service';
+// import { LockService } from './lock.service';
 import env from '@/env';
 
 @Service()
@@ -19,9 +20,7 @@ export class AuthService {
     @Logger(__filename) private logger: LoggerService,
     private userService: UserService,
     private jwtService: JWTService,
-    private otpService: OTPService,
-    // private mailService: MailService,
-    private lockService: LockService,
+    private otpService: OTPService, // private mailService: MailService, // private lockService: LockService,
   ) {}
 
   //TODO add method descriptions
@@ -44,10 +43,11 @@ export class AuthService {
     this.logger.info('ℹ️ Signing up new user');
 
     //prevent parallel requests from throwing DB error
-    const user = await this.lockService.acquire(`${LOCK_KEYS.CREATE_USER_KEY}${body.email}`, async () => {
-      //create user
-      return await this.userService.createUser(body);
-    });
+    // const user = await this.lockService.acquire(`${LOCK_KEYS.CREATE_USER_KEY}${body.email}`, async () => {
+    //create user
+    // return await this.userService.createUser(body);
+    const user = await this.userService.createUser(body);
+    // });
 
     //send verification email
     // this.mailService.sendVerificationMail({

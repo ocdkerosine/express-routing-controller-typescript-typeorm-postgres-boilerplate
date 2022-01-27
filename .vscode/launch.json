@@ -4,31 +4,31 @@
         {
             "type": "node-terminal",
             "request": "launch",
-            "name": "Dev express-routing-controller-typescript-typeorm-postgres-boilerplate",
+            "name": "Dev kerosine-nodejs-boilerplate-api",
             "command": "npm run dev"
         },
         {
             "type": "node-terminal",
             "request": "launch",
-            "name": "Start express-routing-controller-typescript-typeorm-postgres-boilerplate",
+            "name": "Start kerosine-nodejs-boilerplate-api",
             "command": "npm run start"
         },
         {
             "type": "node-terminal",
             "request": "launch",
-            "name": "Test express-routing-controller-typescript-typeorm-postgres-boilerplate",
+            "name": "Test kerosine-nodejs-boilerplate-api",
             "command": "npm run test"
         },
         {
             "type": "node-terminal",
             "request": "launch",
-            "name": "Lint express-routing-controller-typescript-typeorm-postgres-boilerplate",
+            "name": "Lint kerosine-nodejs-boilerplate-api",
             "command": "npm run lint"
         },
         {
             "type": "node-terminal",
             "request": "launch",
-            "name": "Lint:Fix express-routing-controller-typescript-typeorm-postgres-boilerplate",
+            "name": "Lint:Fix kerosine-nodejs-boilerplate-api",
             "command": "npm run lint:fix"
         }
     ]

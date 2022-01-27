@@ -19,7 +19,7 @@ describe('Testing Auth', () => {
       };
 
       const app = new App([AuthController]);
-      return request(app.getServer()).post('/auth/signup').send(userData);
+      return request(app.getServer()).post('/v2/auth/signup').send(userData).expect(201);
     });
   });
 
@@ -32,7 +32,7 @@ describe('Testing Auth', () => {
 
       const app = new App([AuthController]);
       return request(app.getServer())
-        .post('/auth/login')
+        .post('/v2/auth/login')
         .send(userData)
         .expect('Set-Cookie', /^Authorization=.+/);
     });

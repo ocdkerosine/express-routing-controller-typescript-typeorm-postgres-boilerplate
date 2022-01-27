@@ -1,6 +1,6 @@
 import request from 'supertest';
-import App from '@/app';
-import { IndexController } from '@controllers/index.controller';
+import App from '../app';
+import { IndexController } from '../api/controllers/';
 
 afterAll(async () => {
   await new Promise<void>(resolve => setTimeout(() => resolve(), 500));
@@ -11,7 +11,7 @@ describe('Testing Index', () => {
     it('response statusCode 200', () => {
       const app = new App([IndexController]);
 
-      return request(app.getServer()).get('/').expect(200);
+      return request(app.getServer()).get('/v2').expect(200);
     });
   });
 });
