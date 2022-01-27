@@ -8,15 +8,18 @@ afterAll(async () => {
 });
 
 describe('Testing Auth', () => {
-  describe('[POST] /signup', () => {
+  describe('[POST] /auth/signup', () => {
     it('response should have the Create userData', () => {
       const userData: CreateUserDto = {
-        email: 'test@email.com',
+        email: 'cyan.alexandar@airadding.com',
         password: 'q1w2e3r4',
+        firstName: 'Cyan',
+        lastName: 'Alexandar',
+        businessName: 'Alexanding Cheeks LTD',
       };
 
       const app = new App([AuthController]);
-      return request(app.getServer()).post('/signup').send(userData);
+      return request(app.getServer()).post('/auth/signup').send(userData);
     });
   });
 

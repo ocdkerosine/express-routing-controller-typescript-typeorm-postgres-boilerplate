@@ -27,7 +27,7 @@ services:
       context: ./
       target: production-build-stage
       dockerfile: Dockerfile
-    image: whoeveryouare/template-api:latest
+    image: ocdkerosine/nodejs-template-api:latest
     container_name: template-api
     ports:
       - '${APP_PORT}:${APP_PORT}'

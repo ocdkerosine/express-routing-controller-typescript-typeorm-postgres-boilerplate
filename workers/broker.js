@@ -2,7 +2,7 @@
 // @ts-ignore
 const lm = require('live-mutex');
 
-Promise.all([new lm.Broker(Object.freeze({ port: 6972, host: '0.0.0.0' })).ensure()]).then(function ([b]) {
+Promise.all([new lm.Broker(Object.freeze({ port: 6972, host: 'localhost' })).ensure()]).then(function ([b]) {
   b.emitter.on('warning', function () {
     // eslint-disable-next-line prefer-rest-params
     console.log('BrokerError: ', ...arguments);
