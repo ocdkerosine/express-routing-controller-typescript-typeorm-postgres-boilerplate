@@ -61,7 +61,8 @@
     "typeorm-seeding": "^1.6.1",
     "typeorm-typedi-extensions": "^0.4.1",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^4.5.5"
+    "winston-daily-rotate-file": "^4.5.5",
+    "live-mutex": "^0.2.25"
   },
   "devDependencies": {
     "@swc/cli": "^0.1.51",

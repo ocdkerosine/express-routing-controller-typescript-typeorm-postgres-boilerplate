@@ -1,5 +1,6 @@
 version: '3.7'
 
+name: kerosine-nodejs-boilerplate-api
 services:
   # proxy:
   #   image: nginx:alpine
