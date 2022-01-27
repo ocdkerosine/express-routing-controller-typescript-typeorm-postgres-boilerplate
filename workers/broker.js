@@ -7,4 +7,5 @@ Promise.all([new lm.Broker(Object.freeze({ port: 6972, host: '0.0.0.0' })).ensur
     // eslint-disable-next-line prefer-rest-params
     console.log('BrokerError: ', ...arguments);
   });
+  console.log(b);
 });

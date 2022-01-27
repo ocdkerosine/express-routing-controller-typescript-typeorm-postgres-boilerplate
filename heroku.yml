@@ -4,7 +4,7 @@ build:
 run:
   worker:
     command:
-      - node src/workers/broker.js
+      - node workers/broker.js
     image: web
 
 #heroku stack:set container

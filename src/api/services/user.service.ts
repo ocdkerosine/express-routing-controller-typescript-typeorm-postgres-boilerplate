@@ -9,7 +9,7 @@ import { ICreateUser } from '@interfaces/user.interface';
 
 @Service()
 export class UserService {
-  constructor(@Logger(__filename) private logger: LoggerService, @InjectRepository(User, 'auth') private userRepository: Repository<User>) {}
+  constructor(@Logger(__filename) private logger: LoggerService, @InjectRepository(User) private userRepository: Repository<User>) {}
 
   public async create(body: ICreateUser): Promise<User> {
     this.logger.info('ℹ️ Creating new user => ', body);

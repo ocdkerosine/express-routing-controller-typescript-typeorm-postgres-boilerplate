@@ -1,7 +1,7 @@
 import request from 'supertest';
-import App from '@/app';
-import { AuthController } from '@controllers/auth.controller';
-import { CreateUserDto } from '@dtos/users.dto';
+import App from '../app';
+import { AuthController } from '../api/controllers/auth.controller';
+import { CreateUserDto } from '../api/dtos/user.dto';
 
 afterAll(async () => {
   await new Promise<void>(resolve => setTimeout(() => resolve(), 500));
