@@ -10,12 +10,19 @@ export class LockService {
   // be sure to use the docker cli and run "route" to obtain the IP address. it will change if you rebuild the container.
   // localhost is supposed to work. 0.0.0.0 is also supposed to work but if they dont then thats the workaround
   // ref - https://github.com/ORESoftware/live-mutex/issues/46
-  static lock = new Client({ port: 6972, host: 'localhost', ttl: 11000, lockRetryMax: 0 });
+  static lock: Client;
 
   constructor(@Logger(__filename) private logger: LoggerService) {
-    LockService.lock.emitter.on('warning', function () {
-      // eslint-disable-next-line prefer-rest-params
-      logger.error('LockError: ', ...arguments);
+    this.initializeLock();
+  }
+
+  async initializeLock() {
+    LockService.lock = await Promise.all([new Client({ port: 6970, host: 'localhost', ttl: 11000, lockRetryMax: 0 })]).then(([c]) => {
+      c.emitter.on('warning', function () {
+        // eslint-disable-next-line prefer-rest-params
+        console.log('LockError: ', ...arguments);
+      });
+      return c;
     });
   }
 

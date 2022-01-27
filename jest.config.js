@@ -1,5 +1,5 @@
 const { pathsToModuleNameMapper } = require('ts-jest');
-const { compilerOptions } = require('./tsconfig.json');
+const { compilerOptions } = require('./tsconfig.json'); // https://jsonformatter.org/json-parser
 
 module.exports = {
   preset: 'ts-jest',

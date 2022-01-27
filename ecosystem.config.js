@@ -47,7 +47,7 @@ module.exports = {
     },
     {
       name: 'broker', // pm2 start App name
-      script: 'dist/broker.js',
+      script: 'workers/broker.js',
       exec_mode: 'cluster', // 'cluster' or 'fork'
       instance_var: 'INSTANCE_ID', // instance variable
       instances: 1, // pm2 instance count

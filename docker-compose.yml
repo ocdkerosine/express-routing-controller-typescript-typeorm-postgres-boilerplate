@@ -18,7 +18,7 @@ services:
       - '6970:6970'
     environment:
       - live_mutex_port=6970
-      - live_mutex_port=0.0.0.0
+      - live_mutex_port=localhost
     restart: 'unless-stopped'
     networks:
       - api-network
